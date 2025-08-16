@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced HTML5 Page with Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    header, section, footer {
+      margin-bottom: 2rem;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f4f4f4;
+    }
+    form {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      max-width: 600px;
+    }
+    fieldset {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid #aaa;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-top: 0.5rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 0.25rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 10px 15px;
+      background: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML5 Advanced Elements & Form Demo</h1>
+    <p>This page demonstrates lists, tables, media embedding, and a full HTML5 form with native validation.</p>
+  </header>
+
+  <!-- Lists Section -->
+  <section>
+    <h2>Features of HTML5</h2>
+    <ul>
+      <li>Semantic elements (<code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, etc.)</li>
+      <li>Rich media support (audio, video)</li>
+      <li>Improved forms with new input types and validation</li>
+    </ul>
+
+    <h3>Steps to Create an Accessible Web Page</h3>
+    <ol>
+      <li>Plan the structure</li>
+      <li>Use semantic HTML5 tags</li>
+      <li>Ensure accessibility with labels and alt text</li>
+      <li>Test validation and responsiveness</li>
+    </ol>
+  </section>
+
+  <!-- Table Section -->
+  <section>
+    <h2>Comparison of Input Types</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Input Type</th>
+          <th>Purpose</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Email</td>
+          <td>Captures valid email addresses</td>
+          <td><input type="email" placeholder="name@example.com"></td>
+        </tr>
+        <tr>
+          <td>Number</td>
+          <td>Restricts input to numeric values</td>
+          <td><input type="number" min="1" max="10"></td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td>Selects a date from a calendar</td>
+          <td><input type="date"></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Media Section -->
+  <section>
+    <h2>Embedded Media</h2>
+    <figure>
+      <img src="https://via.placeholder.com/400x200" alt="Sample Placeholder Image" />
+      <figcaption>Figure 1: Example of an image element</figcaption>
+    </figure>
+
+    <figure>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <figcaption>Figure 2: Example of an audio element</figcaption>
+    </figure>
+
+    <figure>
+      <video width="400" controls>
+        <source src="https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Figure 3: Example of a video element</figcaption>
+    </figure>
+  </section>
+
+  <!-- Form Section -->
+  <section>
+    <h2>Registration Form</h2>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required minlength="3" placeholder="Enter your full name">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g. 0712345678" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Account Details</legend>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required minlength="5" placeholder="Choose a username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" placeholder="At least 8 characters">
+
+        <label for="confirm">Confirm Password:</label>
+        <input type="password" id="confirm" name="confirm" required minlength="8" placeholder="Re-enter password">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">--Select--</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferences</legend>
+        <label>
+          <input type="checkbox" name="subscribe" checked>
+          Subscribe to newsletter
+        </label>
+
+        <label>
+          <input type="radio" name="contact" value="email" required>Email
+        </label>
+        <label>
+          <input type="radio" name="contact" value="phone" required>Phone
+        </label>
+        <label>
+          <input type="radio" name="contact" value="sms" required>SMS
+        </label>
+
+        <label for="bio">Short Bio:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Enhanced HTML5 Assignment. All rights reserved.</p>
+  </footer>
+</body>
+</html>
